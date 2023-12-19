@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Submission Form</title>
+</head>
+<body>
+    <center> 
+    <h1>Scheme Submission Form</h1>
+</center>
+    <form id="dataForm" action="/submitFormData" method="post" style="text-align: center;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= data_list[0].name %>" required><br>
+<br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" value="<%= data_list[0].age %>" required><br>
+        <br>
+        <label for="income">Income:</label>
+        <input type="number" id="income" name="income" value="<%= data_list[0].income %>" required><br>
+        <br>
+        <label for="sex">Sex:</label>
+        <select id="sex" name="sex" required>
+            <option value="male" <%= data_list[0].sex === 'male' ? 'selected' : '' %>>Male</option>
+            <option value="female" <%= data_list[0].sex === 'female' ? 'selected' : '' %>>Female</option>
+        </select><br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
